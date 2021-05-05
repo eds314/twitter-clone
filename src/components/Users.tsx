@@ -13,7 +13,6 @@ const USERS_QUERY = gql`
 interface User {
   name: string
 }
-
 export default function Users() {
   const { loading, error, data } = useQuery(USERS_QUERY);
   if (loading) return <p>Loading...</p>;
