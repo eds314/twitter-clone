@@ -41,7 +41,7 @@ interface LoginValues {
   })
  
   return (
-    <div>
+    <div className="container">
       <img src={TwitterLogo}
       alt='logo'
       style={{width:"50px"}}
@@ -67,7 +67,7 @@ interface LoginValues {
           <ErrorMessage name="email" component={'div'} />
           <Field name= "password" type="password" placeholder= "Password"/> 
           <ErrorMessage name="password" component={'div'} />  
-          
+
           <button type="submit" className="login-button"><span>Login</span></button>
         </Form>
 

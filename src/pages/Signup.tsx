@@ -50,7 +50,7 @@ interface SignupValues {
   })
  
   return (
-    <div> 
+    <div className="container"> 
        <img src={TwitterLogo}
       alt='logo'
       style={{width:"50px"}}
@@ -80,7 +80,7 @@ interface SignupValues {
           <ErrorMessage name="password" component={'div'} />  
           <Field name= "confirmPassword" type="password" placeholder= "Confirm Password"/> 
           <ErrorMessage name="confirmPasword" component={'div'} />
-          <button type="submit" className="login-button"><span>Signup</span></button>
+          <button type="submit" className="login-button"><span></span> Signup</button>
         </Form>
         
 
