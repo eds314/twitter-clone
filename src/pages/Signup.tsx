@@ -2,8 +2,9 @@ import { gql, useMutation } from '@apollo/client'
 import {ErrorMessage, Field, Form, Formik} from 'formik'
 import { validateSchema } from 'graphql'
 import React from "react"
-import {useHistory} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import * as Yup from 'yup'
+import TwitterLogo from '../styles/assets/twitter-logo.png'
 
 
 const SIGNUP_MUTATION = gql`
@@ -49,8 +50,13 @@ interface SignupValues {
   })
  
   return (
-    <div>
-    <h1>Signup</h1>
+    <div> 
+       <img src={TwitterLogo}
+      alt='logo'
+      style={{width:"50px"}}
+      className="logo"
+      />
+    <h3>Signup</h3>
     <Formik
     initialValues= {initialValues}
     validationSchema = {validationSchema}
@@ -74,13 +80,16 @@ interface SignupValues {
           <ErrorMessage name="password" component={'div'} />  
           <Field name= "confirmPassword" type="password" placeholder= "Confirm Password"/> 
           <ErrorMessage name="confirmPasword" component={'div'} />
-          <button type="submit">Signup</button>
+          <button type="submit" className="login-button"><span>Signup</span></button>
         </Form>
+        
 
-
-
-    
     </Formik>
+    
+    <div className="register">
+          <h4>Already have an sccount?</h4>
+          <Link to="/login">Log in</Link>
+    </div>  
     </div>
   )
 }
